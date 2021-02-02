@@ -10,7 +10,7 @@
 	<h1>로그인 페이지</h1>
 	<form method="post">
 		<input type="text" name="userid" />
-		<input type="number" name="code"/>
+		<input type="number" name="password"/>
 		<input type="submit" value="전송"/>	
 	</form>
 </body>

@@ -24,4 +24,25 @@
 	<!-- Controller, Repositorty, Service 등을 검색할 패키지 -->
 	<context:component-scan base-package="net.gondr.controller" />
 	
+	<!-- 인터셉터 등록하기 -->
+	<beans:bean id="authInter" class="net.gondr.interceptor.AuthInterceptor"></beans:bean>
+		
+	<interceptors>
+		<interceptor>
+			<mapping path="/user/info"/>
+			<mapping path="/board/**"/>
+			<exclude-mapping path="/board/list"/>
+			<exclude-mapping path="/board/view/*"/>
+			<beans:ref bean="authInter"/>
+		</interceptor>
+	</interceptors>
 </beans:beans>
+
+
+
+
+
+
+
+
+
